@@ -1,0 +1,76 @@
+<html>
+<head>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://unpkg.com/formiojs@latest/dist/formio.full.min.css'>
+		
+	<script src='https://unpkg.com/formiojs@latest/dist/formio.full.min.js'></script>
+	<script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript'>
+		var a  = 10 ;
+		var form ;
+		var form2 ;
+		window.onload = function() {
+			console.log("version"+26);
+			
+		$.getJSON("json/flagship.json", function(result){
+
+					form = " { \"components\": " + JSON.stringify(result.forms.iplus.components) + "}" ;
+					form  =    jQuery.parseJSON(form);
+				// console.log("Form2 Type : "+typeof(form));
+					// console.log("form 2 ======= " + form);	
+				
+				// form2 = { "components": [{"source":"59b7461d41a8fa0007a69cc0","lockKey":true,"tags":[],"conditional":{"eq":"","when":null,"show":""},"properties":{},"type":"number","validate":{"required":false,"min":"","max":"","step":"any","integer":"","multiple":"","custom":""},"clearOnHide":true,"hidden":false,"persistent":true,"protected":false,"defaultValue":"","suffix":"","prefix":"","placeholder":"","key":"number1","label":"Number 1","inputType":"number","tableView":true,"input":true},{"source":"59b7461d41a8fa0007a69cc0","lockKey":true,"tags":[],"conditional":{"eq":"","when":null,"show":""},"properties":{"":""},"type":"number","validate":{"required":false,"min":"","max":"","step":"any","integer":"","multiple":"","custom":""},"clearOnHide":true,"hidden":false,"persistent":true,"protected":false,"defaultValue":"","suffix":"","prefix":"","placeholder":"","key":"number2","label":"Number 2","inputType":"number","tableView":true,"input":true,"isNew":false},{"disabled":true,"input":true,"tableView":true,"inputType":"text","inputMask":"","label":"result","key":"result","placeholder":"","prefix":"","suffix":"","multiple":false,"defaultValue":"","protected":false,"unique":false,"persistent":true,"hidden":false,"clearOnHide":true,"validate":{"customPrivate":false,"custom":"","pattern":"","maxLength":"","minLength":"","required":false},"conditional":{"eq":"","when":null,"show":""},"type":"textfield","tags":[],"properties":{"":""},"calculateValue":"value=data['result']"},{"custom":"var test = { \"A\":data['number1'],\"B\":data['number2']};\nvar test2 = JSON.stringify(test);\nalert(test2);\nalert(' Data : '+data['number1']+'Data2 :'+data['number2']);\nvar a = 5;\nvar b = 10;\n\n\n$.ajax(\n{\n  \"url\": \"https://prod-20.southcentralus.logic.azure.com/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg\",\n  \"type\": \"POST\",\n\"contentType\": \"application/json\",\n \"data\": test2,\n  \"success\": function(result,status,xhr){\n        console.log(result);\nconsole.log(status);\nconsole.log(xhr);\n        data['result'] = result;\n  console.log(data['result']);\n\n  }\n});","properties":{"":""},"conditional":{"show":"","when":null,"eq":""},"tags":[],"type":"button","theme":"primary","disableOnInvalid":false,"action":"submit","block":false,"rightIcon":"","leftIcon":"","size":"md","key":"submit","tableView":false,"label":"SuperSend","input":true}]}
+				// console.log("Form2 Type : "+typeof(form2));
+			 
+				Formio.createForm(document.getElementById('formio'), form).then(function(instance) {
+				
+					instance.on('submit', function(submission) {
+						var url = 'https://prod-20.southcentralus.logic.azure.com:443/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg';
+						
+var test = {"A":submission.data.number1,"B":submission.data.number2};
+var test2 = JSON.stringify(test);
+var result1;
+$.ajax(
+{
+ "url": "https://prod-20.southcentralus.logic.azure.com/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg",
+ "type": "POST",
+"contentType": "application/json",
+"data": test2,
+ "success": function(result){
+		console.log(result);
+		result1 = result;
+		console.log("return result1" + result1);
+		return result1;
+
+ }
+
+ 	
+}).then(function(result){
+	$('[name=data\\[result\\]]').val(result);
+	console.log(">>>>>>>>>>>"+result);
+
+});
+
+
+
+
+
+
+
+					});
+				});
+			});
+
+		};
+
+		
+	</script>
+</head>
+<body>
+<div class="container bg-faded">
+   <div class="row">
+        <div class="col-12" id="formio"></div>
+    </div>
+ </div>
+</body>
+</html>

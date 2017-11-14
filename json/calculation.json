@@ -1,0 +1,254 @@
+{
+    "_id": "59b7e91640e533000738a344",
+    "machineName": "gyaikxjdusvwokf:sum",
+    "modified": "2017-09-12T19:30:00.673Z",
+    "title": "Sum",
+    "display": "form",
+    "name": "sum",
+    "path": "sum",
+    "project": "59b7e87d41a8fa0007a6a73b",
+    "created": "2017-09-12T14:03:02.945Z",
+    "components": [
+        {
+            "properties": {
+                "": ""
+            },
+            "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+            },
+            "tags": [],
+            "type": "number",
+            "validate": {
+                "custom": "",
+                "multiple": "",
+                "integer": "",
+                "step": "any",
+                "max": "",
+                "min": "",
+                "required": false
+            },
+            "clearOnHide": true,
+            "hidden": false,
+            "persistent": true,
+            "protected": false,
+            "defaultValue": "",
+            "suffix": "",
+            "prefix": "",
+            "placeholder": "",
+            "key": "a",
+            "label": "A",
+            "inputType": "number",
+            "tableView": true,
+            "input": true
+        },
+        {
+            "properties": {
+                "": ""
+            },
+            "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+            },
+            "tags": [],
+            "type": "number",
+            "validate": {
+                "custom": "",
+                "multiple": "",
+                "integer": "",
+                "step": "any",
+                "max": "",
+                "min": "",
+                "required": false
+            },
+            "clearOnHide": true,
+            "hidden": false,
+            "persistent": true,
+            "protected": false,
+            "defaultValue": "",
+            "suffix": "",
+            "prefix": "",
+            "placeholder": "",
+            "key": "b",
+            "label": "B",
+            "inputType": "number",
+            "tableView": true,
+            "input": true
+        },
+        {
+            "disabled": true,
+            "properties": {
+                "": ""
+            },
+            "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+            },
+            "tags": [],
+            "type": "textarea",
+            "validate": {
+                "custom": "",
+                "pattern": "",
+                "maxLength": "",
+                "minLength": "",
+                "required": false
+            },
+            "clearOnHide": true,
+            "wysiwyg": false,
+            "hidden": false,
+            "persistent": true,
+            "protected": false,
+            "defaultValue": "",
+            "multiple": false,
+            "rows": 3,
+            "suffix": "",
+            "prefix": "",
+            "placeholder": "",
+            "key": "sum",
+            "label": "sum",
+            "tableView": true,
+            "input": true
+        },
+        {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": false,
+            "action": "submit",
+            "block": false,
+            "rightIcon": "",
+            "leftIcon": "",
+            "size": "md",
+            "key": "submit",
+            "tableView": false,
+            "label": "Submit",
+            "input": true,
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "properties": {
+                "": ""
+            }
+        }
+    ],
+    "owner": "599a51ea6ba70d0007fb2b8c",
+    "submissionAccess": [
+        {
+            "type": "create_all",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "delete_all",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "create_own",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "read_own",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "update_own",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "delete_own",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "access": [
+        {
+            "type": "create_all",
+            "roles": []
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "59b7e87d41a8fa0007a6a73c",
+                "59b7e87d41a8fa0007a6a73d",
+                "59b7e87d41a8fa0007a6a73e"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": []
+        },
+        {
+            "type": "delete_all",
+            "roles": []
+        },
+        {
+            "type": "create_own",
+            "roles": []
+        },
+        {
+            "type": "read_own",
+            "roles": []
+        },
+        {
+            "type": "update_own",
+            "roles": []
+        },
+        {
+            "type": "delete_own",
+            "roles": []
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "tags": [],
+    "type": "form"
+}

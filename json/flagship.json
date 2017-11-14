@@ -1,0 +1,2521 @@
+{
+    "title": "MobyDick",
+    "version": "2.0.0",
+    "description": "Whitebeard group",
+    "name": "hvnmwnmglhgkdti",
+    "roles": {
+        "administrator": {
+            "title": "AdministratorTest",
+            "description": "A role for Administrative Users.",
+            "admin": true,
+            "default": false
+        },
+        "authenticated": {
+            "title": "Authenticated",
+            "description": "A role for Authenticated Users.",
+            "admin": false,
+            "default": false
+        },
+        "anonymous": {
+            "title": "Anonymous",
+            "description": "A role for Anonymous Users.",
+            "admin": false,
+            "default": true
+        }
+    },
+    "forms": {
+        "userLogin": {
+            "title": "User Login",
+            "type": "form",
+            "name": "userLogin",
+            "path": "user/login",
+            "tags": [],
+            "components": [
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "email",
+                    "label": "Email",
+                    "lockKey": true,
+                    "key": "email",
+                    "placeholder": "Enter your email address",
+                    "prefix": "",
+                    "suffix": "",
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "type": "email"
+                },
+                {
+                    "input": true,
+                    "tableView": false,
+                    "inputType": "password",
+                    "label": "Password",
+                    "lockKey": true,
+                    "key": "password",
+                    "placeholder": "Enter your password.",
+                    "prefix": "",
+                    "suffix": "",
+                    "protected": true,
+                    "persistent": true,
+                    "type": "password"
+                },
+                {
+                    "input": true,
+                    "label": "Submit",
+                    "tableView": false,
+                    "key": "submit",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "submit",
+                    "disableOnInvalid": true,
+                    "theme": "primary",
+                    "type": "button"
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                }
+            ]
+        },
+        "userRegister": {
+            "title": "User Register",
+            "type": "form",
+            "name": "userRegister",
+            "path": "user/register",
+            "tags": [],
+            "components": [
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "email",
+                    "label": "Email",
+                    "lockKey": true,
+                    "key": "email",
+                    "placeholder": "Enter your email address",
+                    "prefix": "",
+                    "suffix": "",
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "type": "email"
+                },
+                {
+                    "input": true,
+                    "tableView": false,
+                    "inputType": "password",
+                    "label": "Password",
+                    "lockKey": true,
+                    "key": "password",
+                    "placeholder": "Enter your password.",
+                    "prefix": "",
+                    "suffix": "",
+                    "protected": true,
+                    "persistent": true,
+                    "type": "password"
+                },
+                {
+                    "type": "button",
+                    "input": true,
+                    "label": "Submit",
+                    "key": "submit",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "submit",
+                    "disableOnInvalid": true,
+                    "theme": "primary"
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                }
+            ]
+        },
+        "member": {
+            "title": "member",
+            "type": "form",
+            "name": "member",
+            "path": "member",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "components": [],
+                    "lockKey": true,
+                    "addAnother": "Test Add Another",
+                    "bordered": false,
+                    "striped": false,
+                    "properties": {
+                        "car": "1000",
+                        "moto": "500"
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "datagrid",
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "key": "datagrid",
+                    "label": "",
+                    "tableView": true,
+                    "tree": true,
+                    "input": true
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Name",
+                    "key": "name",
+                    "placeholder": "Enter your name",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "lockKey": true
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "LastName",
+                    "key": "lastName",
+                    "placeholder": "LastName",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "rows": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "textarea",
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": ""
+                    },
+                    "clearOnHide": true,
+                    "wysiwyg": {
+                        "toolbarGroups": [
+                            {
+                                "name": "basicstyles",
+                                "groups": [
+                                    "basicstyles",
+                                    "cleanup"
+                                ]
+                            },
+                            {
+                                "name": "paragraph",
+                                "groups": [
+                                    "list",
+                                    "indent",
+                                    "blocks",
+                                    "align",
+                                    "bidi",
+                                    "paragraph",
+                                    "-",
+                                    "JustifyLeft",
+                                    "JustifyCenter",
+                                    "JustifyRight",
+                                    "JustifyBlock"
+                                ]
+                            },
+                            {
+                                "name": "links",
+                                "groups": [
+                                    "links"
+                                ]
+                            },
+                            {
+                                "name": "insert",
+                                "groups": [
+                                    "insert"
+                                ]
+                            },
+                            "/",
+                            {
+                                "name": "styles",
+                                "groups": [
+                                    "Styles",
+                                    "Format",
+                                    "Font",
+                                    "FontSize"
+                                ]
+                            },
+                            {
+                                "name": "colors",
+                                "groups": [
+                                    "colors"
+                                ]
+                            },
+                            {
+                                "name": "clipboard",
+                                "groups": [
+                                    "clipboard",
+                                    "undo"
+                                ]
+                            },
+                            {
+                                "name": "editing",
+                                "groups": [
+                                    "find",
+                                    "selection",
+                                    "spellchecker",
+                                    "editing"
+                                ]
+                            },
+                            {
+                                "name": "document",
+                                "groups": [
+                                    "mode",
+                                    "document",
+                                    "doctools"
+                                ]
+                            },
+                            {
+                                "name": "others",
+                                "groups": [
+                                    "others"
+                                ]
+                            },
+                            {
+                                "name": "tools",
+                                "groups": [
+                                    "tools"
+                                ]
+                            }
+                        ],
+                        "extraPlugins": "justify,font",
+                        "removeButtons": "Cut,Copy,Paste,Underline,Subscript,Superscript,Scayt,About",
+                        "uiColor": "#eeeeee",
+                        "height": "400px",
+                        "width": "100%"
+                    },
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "multiple": false,
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Biography",
+                    "key": "bio",
+                    "label": "Bio",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "password",
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": true,
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Password",
+                    "key": "password",
+                    "label": "Password",
+                    "inputType": "password",
+                    "tableView": false,
+                    "input": true
+                },
+                {
+                    "key": "content",
+                    "input": false,
+                    "html": "<p>It&#39;s not possible to include everyone&#39;s excellent ideas without the core library bloating, bringing in a ton of outside dependencies, or occasionally causing use case conflicts (some people need to safely execute untrusted rules, some people need to change outside state).</p>\n\n<p>Check out the&nbsp;<a href=\"http://jsonlogic.com/add_operation.html\">documentation for adding custom operations</a>&nbsp;and be sure to stop by the&nbsp;<a href=\"https://github.com/jwadhams/json-logic-js/wiki/Custom-Operations\">Wiki page of custom operations</a>&nbsp;to see if someone has already solved your problem or to share your solution.</p>\n",
+                    "type": "content",
+                    "tags": [],
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "email",
+                    "kickbox": {
+                        "enabled": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "unique": false,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Email",
+                    "key": "email",
+                    "label": "Email",
+                    "inputType": "email",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Name",
+                    "key": "name2",
+                    "placeholder": "Name",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "type": "textfield",
+                    "properties": {
+                        "": ""
+                    },
+                    "tags": [],
+                    "lockKey": true,
+                    "source": "59b2181f67d7fa0007a56408"
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Test Display Result",
+                    "key": "testDisplayResult",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "calculateValue": "value = 1+1;"
+                },
+                {
+                    "input": true,
+                    "label": "Say Hi",
+                    "tableView": false,
+                    "key": "sayHi",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "custom",
+                    "disableOnInvalid": false,
+                    "theme": "default",
+                    "type": "button",
+                    "tags": [],
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "properties": {
+                        "": ""
+                    },
+                    "custom": "alert('Hi');"
+                },
+                {
+                    "input": true,
+                    "label": "Logic azure",
+                    "tableView": false,
+                    "key": "pBig",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "custom",
+                    "disableOnInvalid": false,
+                    "theme": "primary",
+                    "type": "button",
+                    "tags": [],
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "properties": {
+                        "": ""
+                    },
+                    "custom": "var urla =\"https://prod-20.southcentralus.logic.azure.com/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg\";\n$(document).ready(function(){\n    $(\"button\").click(function(){\n        $.post(urla,\n        {\n           \"A\": 123,\n          \"B\": 456\n        },\n        function(data,status){\n            alert(\"Data: \" + data + \"\\nStatus: \" + status);\n        });\n    });\n});"
+                },
+                {
+                    "custom": "var getJSON = function(url) {\n  return new Promise(function(resolve, reject) {\n    var xhr = new XMLHttpRequest();\n    xhr.open('get', url, true);\n    xhr.responseType = 'json';\n    xhr.onload = function() {\n      var status = xhr.status;\n      if (status == 200) {\n        resolve(xhr.response);\n      } else {\n        reject(status);\n      }\n    };\n    xhr.send();\n  });\n};\ngetJSON('https://hvnmwnmglhgkdti.form.io/memberre/submission/59b21865d44a3400077d2bb9').then(function(data) {\n    alert('Your Json ID is:  ' + data._id + ' Data: ' + data.data['lastName'] ); //you can comment this, i used it to debug\n\n   // result.innerText = data._id; //display the result in an HTML element\n}, function(status) { //error detection....\n  alert('Something went wrong.');\n});",
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "custom",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "test",
+                    "tableView": false,
+                    "label": "Test",
+                    "input": true
+                }
+            ],
+            "access": [
+                {
+                    "type": "create_all",
+                    "roles": []
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": []
+                },
+                {
+                    "type": "delete_all",
+                    "roles": []
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_all",
+                    "roles": [
+                        "administrator",
+                        "anonymous",
+                        "authenticated"
+                    ]
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": [
+                        "administrator",
+                        "anonymous",
+                        "authenticated"
+                    ]
+                },
+                {
+                    "type": "delete_all",
+                    "roles": [
+                        "administrator",
+                        "anonymous",
+                        "authenticated"
+                    ]
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ]
+        },
+        "addvalue1": {
+            "title": "addvalue1",
+            "type": "form",
+            "name": "addvalue1",
+            "path": "addvalue1",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "source": "59b60d7240e5330007389144",
+                    "lockKey": true,
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "12",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number1",
+                    "label": "Number 1",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "source": "59b60d7240e5330007389144",
+                    "lockKey": true,
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "10",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number2",
+                    "label": "Number 2",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "source": "59b60d7240e5330007389144",
+                    "lockKey": true,
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "result",
+                    "label": "Number1 + Number2",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true,
+                    "calculateValue": "value=data['number1']+data['number2'];"
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "tags": [],
+                    "type": "textfield",
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "unique": false,
+                    "protected": false,
+                    "defaultValue": "",
+                    "multiple": false,
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "stringField",
+                    "label": "String Field",
+                    "inputMask": "",
+                    "inputType": "text",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "calculateValue": "value=data['stringField'];",
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Show String field",
+                    "key": "showStringfield",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "customDefaultValue": ""
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Get By API",
+                    "key": "getByApi",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "calculateValue": "var urla =\"https://prod-20.southcentralus.logic.azure.com/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg\";\n$(document).ready(function(){\n    $(\"button\").click(function(){\n        $.post(urla,\n        {\n          name: \"Donald Duck\",\n          city: \"Duckburg\"\n        },\n        function(data,status){\n            alert(\"Data: \" + data + \"\\nStatus: \" + status);\n        });\n    });\n});"
+                },
+                {
+                    "custom": "$.ajax({\n    type: \"DELETE\",\n    url: \"https://hvnmwnmglhgkdti.form.io/addvalue1/submission/59b6102741a8fa0007a695bd\",\n    data: \"name=someValue\",\n    success: function(msg){\n        alert(\"Data Deleted: \" + msg);\n    }\n});",
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "custom",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "deleteMenmer",
+                    "tableView": false,
+                    "label": "Delete Menmer",
+                    "input": true
+                },
+                {
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "submit",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "submit",
+                    "tableView": false,
+                    "label": "Submit",
+                    "input": true,
+                    "isNew": false,
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                }
+            ],
+            "access": [
+                {
+                    "type": "create_all",
+                    "roles": []
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": []
+                },
+                {
+                    "type": "delete_all",
+                    "roles": []
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "delete_all",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "create_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "read_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "delete_own",
+                    "roles": [
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ]
+        },
+        "iplus": {
+            "title": "iplus",
+            "type": "form",
+            "name": "iplus",
+            "path": "iplus",
+            "display": "form",
+            "action": "https://hvnmwnmglhgkdti.form.io/memberre/submission/59b21865d44a3400077d2bb9",
+            "tags": [],
+            "components": [
+                {
+                    "key": "content",
+                    "input": false,
+                    "html": "<blockquote>\n<p style=\"text-align: center;\"><strong><span style=\"font-size:22px;\">This form is calling by Azure logic to function</span></strong></p>\n</blockquote>\n",
+                    "type": "content",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "source": "59b7461d41a8fa0007a69cc0",
+                    "lockKey": true,
+                    "tags": [],
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "properties": {},
+                    "type": "number",
+                    "validate": {
+                        "required": false,
+                        "min": "",
+                        "max": "",
+                        "step": "any",
+                        "integer": "",
+                        "multiple": "",
+                        "custom": ""
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number1",
+                    "label": "Number 1",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "source": "59b7461d41a8fa0007a69cc0",
+                    "lockKey": true,
+                    "tags": [],
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "properties": {
+                        "": ""
+                    },
+                    "type": "number",
+                    "validate": {
+                        "required": false,
+                        "min": "",
+                        "max": "",
+                        "step": "any",
+                        "integer": "",
+                        "multiple": "",
+                        "custom": ""
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number2",
+                    "label": "Number 2",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "disabled": true,
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "result",
+                    "key": "result",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    },
+                    "calculateValue": ""
+                },
+                {
+                    "custom": "var test = { \"A\":data['number1'],\"B\":data['number2']};\nvar test2 = JSON.stringify(test);\nalert(test2);\nalert(' Data : '+data['number1']+'Data2 :'+data['number2']);\nvar a = 5;\nvar b = 10;\n\n\n$.ajax(\n{\n  \"url\": \"https://prod-20.southcentralus.logic.azure.com/workflows/3a7def216e64471dbff0ca976af3d73f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9bSbjZQx-SGMUSDl-RVKqD3BK3NUFLmk4u1jiD74bOg\",\n  \"type\": \"POST\",\n\"contentType\": \"application/json\",\n \"data\": test2,\n  \"success\": function(result,status,xhr){\n        console.log(result);\nconsole.log(status);\nconsole.log(xhr);\n        data['result'] = result;\n  console.log(data['result']);\n\n  }\n});",
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "tags": [],
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "submit",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "submit",
+                    "tableView": false,
+                    "label": "SuperSend",
+                    "input": true
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                }
+            ],
+            "submissionAccess": []
+        }
+    },
+    "actions": {
+        "userSave": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "user",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "userRole": {
+            "title": "Role Assignment",
+            "name": "role",
+            "form": "user",
+            "settings": {
+                "association": "new",
+                "type": "add",
+                "role": "authenticated"
+            },
+            "priority": 1,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "after"
+            ]
+        },
+        "adminSave": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "admin",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "adminRole": {
+            "title": "Role Assignment",
+            "name": "role",
+            "form": "admin",
+            "settings": {
+                "association": "new",
+                "type": "add",
+                "role": "administrator"
+            },
+            "priority": 1,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "after"
+            ]
+        },
+        "userLogin": {
+            "title": "Login",
+            "name": "login",
+            "form": "userLogin",
+            "settings": {
+                "password": "password",
+                "username": "email",
+                "resources": [
+                    "user",
+                    "admin"
+                ]
+            },
+            "priority": 2,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "userRegisterSave": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "userRegister",
+            "settings": {
+                "fields": {
+                    "password": "password",
+                    "email": "email"
+                },
+                "resource": "user"
+            },
+            "priority": 11,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "userRegisterLogin": {
+            "title": "Login",
+            "name": "login",
+            "form": "userRegister",
+            "settings": {
+                "password": "password",
+                "username": "email",
+                "resources": [
+                    "user"
+                ]
+            },
+            "priority": 2,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "member:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "member",
+            "condition": {
+                "custom": "alert('1');"
+            },
+            "settings": {
+                "fields": {
+                    "testDisplay": "testDisplayResult",
+                    "email": "email",
+                    "bio": "bio",
+                    "password": "password",
+                    "lastName": "lastName",
+                    "name": "name"
+                },
+                "resource": "memberre"
+            },
+            "priority": 11,
+            "method": [
+                "create",
+                "update",
+                "read",
+                "index",
+                "delete"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "member:email": {
+            "title": "Email",
+            "name": "email",
+            "form": "member",
+            "settings": {
+                "message": "{{ submission(data, form.components) }}",
+                "subject": "New submission for {{ form.title }}.",
+                "emails": [
+                    "s.sukmaung@togetherteam.co.th"
+                ],
+                "from": "no-reply@form.io",
+                "transport": "default",
+                "sendEach": false
+            },
+            "priority": 0,
+            "method": [
+                "create"
+            ],
+            "handler": [
+                "after"
+            ]
+        },
+        "memberre:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "memberre",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "addvalue:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "addvalue",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "addvalue1:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "addvalue1",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "plus:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "plus",
+            "priority": 10,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        },
+        "iplus:save": {
+            "title": "Save Submission",
+            "name": "save",
+            "form": "iplus",
+            "condition": {},
+            "settings": {
+                "fields": {
+                    "number2": "number2",
+                    "number1": "number1"
+                },
+                "resource": "plus"
+            },
+            "priority": 11,
+            "method": [
+                "create",
+                "update"
+            ],
+            "handler": [
+                "before"
+            ]
+        }
+    },
+    "resources": {
+        "user": {
+            "title": "User",
+            "type": "resource",
+            "name": "user",
+            "path": "user",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "type": "email",
+                    "persistent": true,
+                    "unique": false,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Enter your email address",
+                    "key": "email",
+                    "label": "Email",
+                    "inputType": "email",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "type": "password",
+                    "persistent": true,
+                    "protected": true,
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Enter your password.",
+                    "key": "password",
+                    "label": "Password",
+                    "inputType": "password",
+                    "tableView": false,
+                    "input": true
+                },
+                {
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": true,
+                    "action": "submit",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "submit",
+                    "tableView": false,
+                    "label": "Submit",
+                    "input": true
+                }
+            ],
+            "access": [
+                {
+                    "type": "create_all",
+                    "roles": []
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "anonymous",
+                        "authenticated",
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": []
+                },
+                {
+                    "type": "delete_all",
+                    "roles": []
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "delete_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ]
+        },
+        "admin": {
+            "title": "Admin",
+            "type": "resource",
+            "name": "admin",
+            "path": "admin",
+            "tags": [],
+            "components": [
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "email",
+                    "label": "Email",
+                    "key": "email",
+                    "placeholder": "Enter your email address",
+                    "prefix": "",
+                    "suffix": "",
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "type": "email"
+                },
+                {
+                    "input": true,
+                    "tableView": false,
+                    "inputType": "password",
+                    "label": "Password",
+                    "key": "password",
+                    "placeholder": "Enter your password.",
+                    "prefix": "",
+                    "suffix": "",
+                    "protected": true,
+                    "persistent": true,
+                    "type": "password"
+                },
+                {
+                    "input": true,
+                    "label": "Submit",
+                    "tableView": false,
+                    "key": "submit",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "submit",
+                    "disableOnInvalid": true,
+                    "theme": "primary",
+                    "type": "button"
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "anonymous",
+                        "authenticated",
+                        "administrator"
+                    ]
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "delete_all",
+                    "roles": [
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                }
+            ]
+        },
+        "memberre": {
+            "title": "memberre",
+            "type": "resource",
+            "name": "memberre",
+            "path": "memberre",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Name",
+                    "key": "name",
+                    "placeholder": "Name",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "LastName",
+                    "key": "lastName",
+                    "placeholder": "LastName",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "input": true,
+                    "tableView": false,
+                    "inputType": "password",
+                    "label": "Password",
+                    "key": "password",
+                    "placeholder": "Password",
+                    "prefix": "",
+                    "suffix": "",
+                    "protected": true,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "type": "password",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "label": "Bio",
+                    "key": "bio",
+                    "placeholder": "Bio",
+                    "prefix": "",
+                    "suffix": "",
+                    "rows": 3,
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "wysiwyg": {
+                        "toolbarGroups": [
+                            {
+                                "name": "basicstyles",
+                                "groups": [
+                                    "basicstyles",
+                                    "cleanup"
+                                ]
+                            },
+                            {
+                                "name": "paragraph",
+                                "groups": [
+                                    "list",
+                                    "indent",
+                                    "blocks",
+                                    "align",
+                                    "bidi",
+                                    "paragraph",
+                                    "-",
+                                    "JustifyLeft",
+                                    "JustifyCenter",
+                                    "JustifyRight",
+                                    "JustifyBlock"
+                                ]
+                            },
+                            {
+                                "name": "links",
+                                "groups": [
+                                    "links"
+                                ]
+                            },
+                            {
+                                "name": "insert",
+                                "groups": [
+                                    "insert"
+                                ]
+                            },
+                            "/",
+                            {
+                                "name": "styles",
+                                "groups": [
+                                    "Styles",
+                                    "Format",
+                                    "Font",
+                                    "FontSize"
+                                ]
+                            },
+                            {
+                                "name": "colors",
+                                "groups": [
+                                    "colors"
+                                ]
+                            },
+                            {
+                                "name": "clipboard",
+                                "groups": [
+                                    "clipboard",
+                                    "undo"
+                                ]
+                            },
+                            {
+                                "name": "editing",
+                                "groups": [
+                                    "find",
+                                    "selection",
+                                    "spellchecker",
+                                    "editing"
+                                ]
+                            },
+                            {
+                                "name": "document",
+                                "groups": [
+                                    "mode",
+                                    "document",
+                                    "doctools"
+                                ]
+                            },
+                            {
+                                "name": "others",
+                                "groups": [
+                                    "others"
+                                ]
+                            },
+                            {
+                                "name": "tools",
+                                "groups": [
+                                    "tools"
+                                ]
+                            }
+                        ],
+                        "extraPlugins": "justify,font",
+                        "removeButtons": "Cut,Copy,Paste,Underline,Subscript,Superscript,Scayt,About",
+                        "uiColor": "#eeeeee",
+                        "height": "400px",
+                        "width": "100%"
+                    },
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": ""
+                    },
+                    "type": "textarea",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "email",
+                    "kickbox": {
+                        "enabled": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "unique": false,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Email",
+                    "key": "email",
+                    "label": "Email",
+                    "inputType": "email",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "text",
+                    "inputMask": "",
+                    "label": "Test Display",
+                    "key": "testDisplay",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "multiple": false,
+                    "defaultValue": "",
+                    "protected": false,
+                    "unique": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                    },
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "type": "textfield",
+                    "tags": [],
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "custom": "alert('' Test \");",
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "custom",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "test",
+                    "tableView": false,
+                    "label": "Test",
+                    "input": true
+                },
+                {
+                    "input": true,
+                    "label": "Submit",
+                    "tableView": false,
+                    "key": "submit",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "submit",
+                    "disableOnInvalid": false,
+                    "theme": "primary",
+                    "type": "button"
+                }
+            ],
+            "access": [
+                {
+                    "type": "create_all",
+                    "roles": []
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": []
+                },
+                {
+                    "type": "delete_all",
+                    "roles": []
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ],
+            "submissionAccess": [
+                {
+                    "type": "create_all",
+                    "roles": [
+                        "administrator",
+                        "anonymous",
+                        "authenticated"
+                    ]
+                },
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "anonymous",
+                        "authenticated"
+                    ]
+                },
+                {
+                    "type": "update_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                },
+                {
+                    "type": "delete_all",
+                    "roles": [
+                        "authenticated",
+                        "anonymous",
+                        "administrator"
+                    ]
+                },
+                {
+                    "type": "create_own",
+                    "roles": []
+                },
+                {
+                    "type": "read_own",
+                    "roles": []
+                },
+                {
+                    "type": "update_own",
+                    "roles": []
+                },
+                {
+                    "type": "delete_own",
+                    "roles": []
+                },
+                {
+                    "type": "team_read",
+                    "roles": []
+                },
+                {
+                    "type": "team_write",
+                    "roles": []
+                },
+                {
+                    "type": "team_admin",
+                    "roles": []
+                }
+            ]
+        },
+        "addvalue": {
+            "title": "addvalue",
+            "type": "resource",
+            "name": "addvalue",
+            "path": "addvalue",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number1",
+                    "label": "Number 1",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "number2",
+                    "label": "Number 2",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "properties": {
+                        "": ""
+                    },
+                    "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                    },
+                    "tags": [],
+                    "type": "number",
+                    "validate": {
+                        "custom": "",
+                        "multiple": "",
+                        "integer": "",
+                        "step": "any",
+                        "max": "",
+                        "min": "",
+                        "required": false
+                    },
+                    "clearOnHide": true,
+                    "hidden": false,
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "",
+                    "key": "result",
+                    "label": "Result",
+                    "inputType": "number",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "type": "button",
+                    "theme": "primary",
+                    "disableOnInvalid": false,
+                    "action": "submit",
+                    "block": false,
+                    "rightIcon": "",
+                    "leftIcon": "",
+                    "size": "md",
+                    "key": "submit",
+                    "tableView": false,
+                    "label": "Submit",
+                    "input": true
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                }
+            ],
+            "submissionAccess": []
+        },
+        "plus": {
+            "title": "plus",
+            "type": "resource",
+            "name": "plus",
+            "path": "plus",
+            "display": "form",
+            "tags": [],
+            "components": [
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "number",
+                    "label": "Number 1",
+                    "key": "number1",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "defaultValue": "",
+                    "protected": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "min": "",
+                        "max": "",
+                        "step": "any",
+                        "integer": "",
+                        "multiple": "",
+                        "custom": ""
+                    },
+                    "type": "number",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "input": true,
+                    "tableView": true,
+                    "inputType": "number",
+                    "label": "Number 2",
+                    "key": "number2",
+                    "placeholder": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "defaultValue": "",
+                    "protected": false,
+                    "persistent": true,
+                    "hidden": false,
+                    "clearOnHide": true,
+                    "validate": {
+                        "required": false,
+                        "min": "",
+                        "max": "",
+                        "step": "any",
+                        "integer": "",
+                        "multiple": "",
+                        "custom": ""
+                    },
+                    "type": "number",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                },
+                {
+                    "input": true,
+                    "label": "Send Value To Azure",
+                    "tableView": false,
+                    "key": "sendValueToAzure",
+                    "size": "md",
+                    "leftIcon": "",
+                    "rightIcon": "",
+                    "block": false,
+                    "action": "custom",
+                    "disableOnInvalid": false,
+                    "theme": "primary",
+                    "type": "button",
+                    "tags": [],
+                    "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                    },
+                    "properties": {
+                        "": ""
+                    }
+                }
+            ],
+            "access": [
+                {
+                    "type": "read_all",
+                    "roles": [
+                        "administrator",
+                        "authenticated",
+                        "anonymous"
+                    ]
+                }
+            ],
+            "submissionAccess": []
+        }
+    },
+    "access": [
+        {
+            "type": "create_all",
+            "roles": [
+                "administrator"
+            ]
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "administrator"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": [
+                "administrator"
+            ]
+        },
+        {
+            "type": "delete_all",
+            "roles": [
+                "administrator"
+            ]
+        }
+    ]
+}
